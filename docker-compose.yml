@@ -1,0 +1,164 @@
+version: '3.3'
+services:
+   db0:
+     image: mysql
+     volumes:
+       - wp_db_data0:/var/lib/mysql
+     restart: always
+     environment:
+       MYSQL_ROOT_PASSWORD: somewordpress
+       MYSQL_DATABASE: wordpress
+       MYSQL_USER: wordpress
+       MYSQL_PASSWORD: wordpress
+
+   wordpress0:
+     depends_on:
+       - db0
+     image: wordpress:latest
+     ports:
+       - "8080:80"
+     restart: always
+     volumes:
+       - ./uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
+       - ./wp-content0:/var/www/html/wp-content
+     environment:
+       WORDPRESS_DB_HOST: db0:3306
+       WORDPRESS_DB_USER: wordpress
+       WORDPRESS_DB_PASSWORD: wordpress
+       
+   db1:
+     image: mysql
+     volumes:
+       - wp_db_data1:/var/lib/mysql
+     restart: always
+     environment:
+       MYSQL_ROOT_PASSWORD: somewordpress
+       MYSQL_DATABASE: wordpress
+       MYSQL_USER: wordpress
+       MYSQL_PASSWORD: wordpress
+
+   wordpress1:
+     depends_on:
+       - db1
+     image: wordpress:latest
+     ports:
+       - "8081:80"
+     restart: always
+     volumes:
+       - ./uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
+       - ./wp-content1:/var/www/html/wp-content
+     environment:
+       WORDPRESS_DB_HOST: db1:3306
+       WORDPRESS_DB_USER: wordpress
+       WORDPRESS_DB_PASSWORD: wordpress
+       
+   db2:
+     image: mysql
+     volumes:
+       - wp_db_data2:/var/lib/mysql
+     restart: always
+     environment:
+       MYSQL_ROOT_PASSWORD: somewordpress
+       MYSQL_DATABASE: wordpress
+       MYSQL_USER: wordpress
+       MYSQL_PASSWORD: wordpress
+
+   wordpress2:
+     depends_on:
+       - db2
+     image: wordpress:latest
+     ports:
+       - "8082:80"
+     restart: always
+     volumes:
+       - ./uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
+       - ./wp-content2:/var/www/html/wp-content
+     environment:
+       WORDPRESS_DB_HOST: db2:3306
+       WORDPRESS_DB_USER: wordpress
+       WORDPRESS_DB_PASSWORD: wordpress
+       
+   db3:
+     image: mysql
+     volumes:
+       - wp_db_data3:/var/lib/mysql
+     restart: always
+     environment:
+       MYSQL_ROOT_PASSWORD: somewordpress
+       MYSQL_DATABASE: wordpress
+       MYSQL_USER: wordpress
+       MYSQL_PASSWORD: wordpress
+
+   wordpress3:
+     depends_on:
+       - db3
+     image: wordpress:latest
+     ports:
+       - "8083:80"
+     restart: always
+     volumes:
+       - ./uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
+       - ./wp-content3:/var/www/html/wp-content
+     environment:
+       WORDPRESS_DB_HOST: db3:3306
+       WORDPRESS_DB_USER: wordpress
+       WORDPRESS_DB_PASSWORD: wordpress
+       
+   db4:
+     image: mysql
+     volumes:
+       - wp_db_data4:/var/lib/mysql
+     restart: always
+     environment:
+       MYSQL_ROOT_PASSWORD: somewordpress
+       MYSQL_DATABASE: wordpress
+       MYSQL_USER: wordpress
+       MYSQL_PASSWORD: wordpress
+
+   wordpress4:
+     depends_on:
+       - db4
+     image: wordpress:latest
+     ports:
+       - "8084:80"
+     restart: always
+     volumes:
+       - ./uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
+       - ./wp-content4:/var/www/html/wp-content
+     environment:
+       WORDPRESS_DB_HOST: db4:3306
+       WORDPRESS_DB_USER: wordpress
+       WORDPRESS_DB_PASSWORD: wordpress
+       
+   db5:
+     image: mysql
+     volumes:
+       - wp_db_data5:/var/lib/mysql
+     restart: always
+     environment:
+       MYSQL_ROOT_PASSWORD: somewordpress
+       MYSQL_DATABASE: wordpress
+       MYSQL_USER: wordpress
+       MYSQL_PASSWORD: wordpress
+
+   wordpress5:
+     depends_on:
+       - db5
+     image: wordpress:latest
+     ports:
+       - "8085:80"
+     restart: always
+     volumes:
+       - ./uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
+       - ./wp-content5:/var/www/html/wp-content
+     environment:
+       WORDPRESS_DB_HOST: db5:3306
+       WORDPRESS_DB_USER: wordpress
+       WORDPRESS_DB_PASSWORD: wordpress
+volumes:
+    wp_db_data0:
+    wp_db_data1:
+    wp_db_data2:
+    wp_db_data3:
+    wp_db_data4:
+    wp_db_data4:
