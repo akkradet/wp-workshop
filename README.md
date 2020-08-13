@@ -18,6 +18,7 @@ Clone this repo. Create a wp-content folder
 
     git clone https://github.com/akkradet/wp-workshop && \
     cd wp-workshop && \
+	mkdir wp-content0 && \
     mkdir wp-content1 && \
 	mkdir wp-content2 && \
 	mkdir wp-content3 && \
